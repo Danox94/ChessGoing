@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouvertures Populaires aux Échecs</title>
+  <style>
+    @font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e7e5df;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+.elo-form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.elo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.elo-form input {
+  padding: 10px;
+  font-size: 18px;
+  width: 100px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+}
+
+    .elo-form button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #2C2C2C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .elo-form button:hover {
+      background-color: #f2f1ec;
+      color: #2C2C2C;
+    }
+
+    .level-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .opening {
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .opening h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .opening p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    a {
+      color: #2C2C2C;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #f2f1ec;
+    }
+
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      background-color: #2C2C2C;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #f2f1ec;
+      color: #2C2C2C;
+    }
+	    .moved-btn {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 10px;
+      margin: 20px 0;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+	   box-sizing: border-box;
+	   cursor: pointer;
+    }
+
+    .moved-btn:hover {
+      background-color: #fff;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+		    .move-btn {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 10px;
+      margin: 20px 0;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+	   box-sizing: border-box;
+	   cursor: pointer;
+    }
+
+    .move-btn:hover {
+      background-color: #f2f1ec;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+
+    .move-btn img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10%;
+      margin-left: 20px;
+    }
+	    .move-btn span {
+      font-size: 45px;
+    }
+	.bouton-go {
+	  width: 200px;
+	  background-color: #2C2C2C;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+	   box-sizing: border-box;
+	}
+	  .bouton-go:hover {
+      background-color: #f2f1ec;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+	.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Les Ouvertures Populaires aux Échecs</h1>
+    
+    <!-- Formulaire d'Elo -->
+<div class="elo-form">
+  <label for="elo-input">Entrez votre estimation Elo :</label>
+  <div class="elo-container">
+    <input type="number" id="elo-input" placeholder="Elo" min="0" max="3000">
+    <a class="move-btn" style="width: 65px;" onclick="showOpenings()"> 🔍</a>
+  </div>
+</div>
+
+
+    <!-- Sections d'ouvertures (initialement cachées) -->
+    <div id="beginner" class="level-section" style="display: none;">
+      <h2>Débutant</h2>
+      <div class="opening">
+        <h3>1. L'Ouverture Italienne</h3>
+        <p>Une ouverture simple où les Blancs jouent 1.e4, suivi de 2.Nf3 et 3.Bc4. C’est une ouverture agressive et facile à apprendre pour les débutants.</p>
+        <a href="https://fr.wikipedia.org/wiki/Ouverture_italienne" target="_blank">En savoir plus</a>
+		<br><a href="l'italienne.html" class="moved-btn">Étudier</a></br>
+      </div>
+      <div class="opening">
+        <h3>2. La Défense Française</h3>
+        <p>Une ouverture populaire pour les Noirs, où le coup 1.e4 e6 est joué. Elle permet aux Noirs de solidifier leur position dès le début de la partie.</p>
+        <a href="https://fr.wikipedia.org/wiki/D%C3%A9fense_fran%C3%A7aise" target="_blank">En savoir plus</a>
+				<br><a href="française.html" class="moved-btn">Étudier</a></br>
+      </div>
+    </div>
+
+    <div id="intermediate" class="level-section" style="display: none;">
+      <h2>Intermédiaire</h2>
+      <div class="opening">
+        <h3>1. La Défense Sicilienne</h3>
+        <p>Une des défenses les plus populaires contre 1.e4. Elle mène à des positions dynamiques et complexes. Parfaite pour ceux qui veulent comprendre la tactique du jeu.</p>
+        <a href="https://fr.wikipedia.org/wiki/D%C3%A9fense_sicilienne" target="_blank">En savoir plus</a>
+				<br><a href="sicilienne.html" class="moved-btn">Étudier</a></br>
+      </div>
+      <div class="opening">
+        <h3>2. La Défense Caro-Kann</h3>
+        <p>Une défense solide pour les Noirs qui commence par 1.e4 c6. Elle vise à défendre tout en cherchant une contre-attaque progressive.</p>
+        <a href="https://fr.wikipedia.org/wiki/D%C3%A9fense_Caro-Kann" target="_blank">En savoir plus</a>
+				<br><a href="carokann.html" class="moved-btn">Étudier</a></br>
+      </div>
+    </div>
+
+    <div id="advanced" class="level-section" style="display: none;">
+      <h2>Avancé</h2>
+      <div class="opening">
+        <h3>1. La Variante Najdorf de la Défense Sicilienne</h3>
+        <p>Une ouverture très respectée, populaire parmi les joueurs de haut niveau. Elle est complexe et stratégique, offrant aux Noirs une grande flexibilité.</p>
+        <a href="https://fr.wikipedia.org/wiki/Variante_Najdorf_de_la_d%C3%A9fense_sicilienne" target="_blank">En savoir plus</a>
+				<br><a href="NajdorfNOIRSfiche.html" class="moved-btn">Étudier</a></br>
+      </div>
+      <div class="opening">
+        <h3>2. L'Ouverture Catalane</h3>
+        <p>Une ouverture positionnelle qui mène souvent à des structures complexes. Les Blancs cherchent à contrôler le centre tout en offrant un grand potentiel d'attaque.</p>
+        <a href="https://fr.wikipedia.org/wiki/Ouverture_catalane" target="_blank">En savoir plus</a>
+				<br><a href="catalane.html" class="moved-btn">Étudier</a></br>
+      </div>
+    </div>
+
+    <a href="ChessGo.html" class="move-btn">Retour à l'accueil</a>
+  </div>
+
+  <script>
+    // Détecte si on appuie sur Entrée dans l'input
+  document.getElementById('elo-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      showOpenings(); // Appelle la fonction comme si on avait cliqué
+    }
+  });
+
+  function showOpenings() {
+    const elo = parseInt(document.getElementById('elo-input').value);
+    document.getElementById('beginner').style.display = 'none';
+    document.getElementById('intermediate').style.display = 'none';
+    document.getElementById('advanced').style.display = 'none';
+
+    if (!isNaN(elo)) {
+      if (elo < 1200) {
+        document.getElementById('beginner').style.display = 'block';
+      } else if (elo < 1800) {
+        document.getElementById('intermediate').style.display = 'block';
+      } else {
+        document.getElementById('advanced').style.display = 'block';
+      }
+    }
+  }
+  eloInput.addEventListener('input', function () {
+  const value = eloInput.value.trim();
+
+  if (!value) {
+    document.getElementById('resultContainer').style.display = 'none';
+  }
+});
+
+  searchIcon.addEventListener('click', function () {
+  const elo = parseInt(eloInput.value.trim());
+
+  if (!eloInput.value.trim() || isNaN(elo)) {
+    // Empêche la recherche si champ vide ou non-nombre
+    document.getElementById('resultContainer').style.display = 'none';
+    return;
+  }
+
+  // ici tu fais le reste normalement si l'ELO est bon
+});
+
+  eloInput.addEventListener('input', function () {
+  const elo = parseInt(eloInput.value);
+
+  if (!eloInput.value.trim()) {
+    document.getElementById('resultContainer').style.display = 'none';
+    return;
+  }
+
+  // le reste de ton code si le champ n'est pas vide
+});
+
+  function closeContainer() {
+  document.getElementById('resultContainer').style.display = 'none';
+}
+
+    // Fonction pour afficher les ouvertures selon l'Elo
+    function showOpenings() {
+    const eloInput = document.getElementById('elo-input');
+    const elo = parseInt(eloInput.value);
+
+    if (isNaN(elo)) {
+      alert("Veuillez entrer un Elo valide !");
+      return;
+    }
+
+    // On cache toutes les sections d'abord
+    document.getElementById('beginner').style.display = "none";
+    document.getElementById('intermediate').style.display = "none";
+    document.getElementById('advanced').style.display = "none";
+
+    // Puis on affiche la bonne section
+    if (elo < 1000) {
+      document.getElementById('beginner').style.display = "block";
+    } else if (elo < 1800) {
+      document.getElementById('intermediate').style.display = "block";
+    } else {
+      document.getElementById('advanced').style.display = "block";
+    }
+  }
+
+    // Ajouter l'événement pour la touche Entrée
+    document.getElementById('elo-input').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        showOpenings();  // Appeler la fonction comme si l'utilisateur appuyait sur le bouton
+      }
+    });
+  </script>
+</body>
+</html>

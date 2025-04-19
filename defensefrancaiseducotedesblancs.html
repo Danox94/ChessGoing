@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+.button-container {
+    display: flex;
+    flex-direction: column; /* Empile les boutons */
+    align-items: center; /* Centre les boutons */
+    width: 100%; /* Prend toute la largeur */
+    gap: 10px; /* Espacement entre les boutons */
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+			width: 100vw;
+			overflow: hidden;
+			overflow-y: scroll
+        }
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+        h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .move-btn {
+            background-color: #2C2C2C;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+			width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+            text-align: center;
+			font-size: 20px;
+        }
+        .move-btn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+        .move-btn:active {
+            transform: scale(0.95);
+        }
+        #choix {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+        }
+		.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+	}
+	#board {
+	width: 100%;
+	max-width: 500px;
+	height: 100%;
+	margin-bottom: 20px;
+	}
+		#img21{
+	width: 180px;
+	height: 180px;
+	margin-left: 400px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+	#img22{
+	width: 180px;
+	height: 180px;
+	margin-left: 385px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+		#img23{
+	width: 180px;
+	height: 180px;
+	margin-left: 410px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+		#img24{
+	width: 180px;
+	height: 180px;
+	margin-left: 276px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+		.move-btn span {
+	font-size: 30px;
+	}
+	  body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    min-height: 100vh; /* hauteur minimum = hauteur de la fenêtre */
+  }
+
+  html {
+    height: 100%;
+  }
+  a {
+  text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+<form method="POST" onsubmit="return false;">
+<h2>Choisissez la variante que vous cherchez (triées par nom)</h2>
+<div class="button-container">
+<a href="" class="move-btn"><span>Variante d'avance<span><img src="FrancoavanceBLANCS.png" id="img21" alt="img21"></a>
+<a href="" class="move-btn"><span>Variante d'échange<span><img src="frechangeBLANCS.png" id="img22" alt="img22"></a>
+<a href="" class="move-btn"><SPAN>Variante Winawer<span><img src="WinawerBLANCS.png" id="img23" alt="img23"></a>
+<a href="" class="move-btn"><SPAN>Variante classique (Steinitz)<SPAN><img src="ClassiqueBLANCS.png" id="img24" alt="img24"></a>
+</div>
+<p id="choix"></p>
+</form>
+</div>
+	</style>
+	</head>

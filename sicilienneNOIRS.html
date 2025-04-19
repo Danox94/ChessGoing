@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>La défense sicilienne</title>
+  <style>
+@media (max-width: 600px) {
+  .section-header {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .move-btn {
+    font-size: 16px;
+    padding: 15px 10px;
+  }
+}
+
+
+    @font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f1ec;
+      margin: 0;
+      padding: 20px;
+	    overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #searchBar {
+      display: block;
+      margin: 0 auto 30px auto;
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    .section-header {
+      background-color: #ddd;
+      cursor: pointer;
+      padding: 15px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px 20px;
+    }
+
+        .move-btn {
+		font-family: 'Poppins',sans-serif;
+            background-color: #2C2C2C;
+            color: white;
+            padding: 40px 40px;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 10px;
+			width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+			
+        }
+        .move-btn:hover {
+            background-color: #f2f1ec;
+            transform: scale(1.1);
+			color: #2C2C2C
+        }
+        .move-btn:active {
+            transform: scale(0.95);
+        }
+
+    .variant-button:hover {
+      background-color: #4CAF50;
+    }
+		    .moved-btn {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 10px;
+      margin: 20px 0;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+	   box-sizing: border-box;
+	   cursor: pointer;
+    }
+
+    .moved-btn:hover {
+      background-color: #fff;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>La défense sicilienne</h1>
+  <input type="text" id="searchBar" placeholder="Rechercher une variante par nom...">
+
+  <div class="section">
+    <div class="section-header">📚 Choisir par nom</div>
+    <div class="section-content">
+      <button class="move-btn" onclick="window.location.href='najdorfNOIRSfiche.html'">Najdorf</button>
+      <button class="move-btn" onclick="window.location.href='dragon.html'">Dragon</button>
+      <button class="move-btn" onclick="window.location.href='scheveningen.html'">Scheveningen</button>
+      <button class="move-btn" onclick="window.location.href='alapin.html'">Alapin</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">🎯 Choisir par style de jeu</div>
+    <div class="section-content">
+      <div class="section">
+        <div class="section-header">⚔ Style Agressif</div>
+        <div class="section-content">
+          <button class="move-btn" onclick="window.location.href='najdorfNOIRSfiche.html'">Najdorf</button>
+          <button class="move-btn" onclick="window.location.href='dragon.html'">Dragon</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">🎯 Style Ouvert</div>
+        <div class="section-content">
+          <button class="move-btn" onclick="window.location.href='dragon.html'">Dragon</button>
+          <button class="move-btn" onclick="window.location.href='alapin.html'">Alapin</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">🧱 Style Solide</div>
+        <div class="section-content">
+          <button class="move-btn" onclick="window.location.href='scheveningen.html'">Scheveningen</button>
+          <button class="move-btn" onclick="window.location.href='alapin.html'">Alapin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <a href="ChessGo.html" class="moved-btn">Retour à l'accueil</a>
+
+  <script>
+  document.querySelectorAll('.section-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    });
+  });
+  const searchBar = document.getElementById('searchBar');
+  searchBar.addEventListener('input', () => {
+    const filter = searchBar.value.toLowerCase();
+    const sections = document.querySelectorAll('.section');
+    let searching = filter !== '';
+
+    sections.forEach(section => {
+      const buttons = section.querySelectorAll('.move-btn');
+      let hasMatch = false;
+
+      buttons.forEach(button => {
+        const text = button.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          button.style.display = 'inline-block';
+          hasMatch = true;
+        } else {
+          button.style.display = 'none';
+        }
+      });
+
+      const content = section.querySelector('.section-content');
+      if (searching) {
+
+        content.style.display = hasMatch ? 'block' : 'none';
+      } else {
+        content.style.display = 'none';
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  
+  <meta charset="UTF-8">
+  <title>ChessGo.com</title>
+  <style>
+  @font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f1ec;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+	  overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      max-width: 600px;
+      padding: 10px;
+      font-size: 18px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .dropdown {
+      margin: 10px 0;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .dropdown-title {
+      font-size: 1.4em;
+      cursor: pointer;
+      background-color: #AAAAAA;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-title:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown-content {
+      display: none;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+
+.move-btn {
+  background-color: #2C2C2C;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px 0;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%; /* Assure que le bouton occupe toute la largeur du conteneur parent */
+  box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+}
+
+.container {
+  width: 90%; /* Ajuste cette largeur pour qu'elle corresponde à celle des leviers */
+  max-width: 100%;
+}
+
+    .move-btn:hover {
+      background-color: #f2f1ec;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+
+    .move-btn img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10%;
+      margin-left: 20px;
+    }
+
+    .move-btn span {
+      font-size: 24px;
+    }
+			#img45{
+	width: 180px;
+	height: 180px;
+	margin-left: 449px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+			#img2{
+	width: 180px;
+	height: 180px;
+	margin-left: 420px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+				#img3{
+	width: 180px;
+	height: 180px;
+	margin-left: 420px;
+	vertical-align: middle;
+	border-radius: 7%;
+	}
+	a {
+  text-decoration: none;
+}
+body {
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <img src="Logopresquefinal.png" style="width: 190px;" />
+  <h1>Répertoire d'ouvertures développé par ChessGo.com</h1>
+
+  <br><input type="text" id="searchInput" placeholder="Rechercher une ouverture par nom..."><br>
+
+  <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('attaques')">🔽 Attaques</div>
+    <div class="dropdown-content" id="attaques">
+      <a href="l'italienne.html" class="move-btn"><span>L'italienne</span><img src="Italienne.png" alt="italienne"></a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('defenses')" class="move-btn">🔽 Défenses</div>
+    <div class="dropdown-content" id="defenses">
+      <a href="sicilienne.html" class="move-btn"><span>La sicilienne</span><img src="Sicilienne.png" alt="sicilienne"></a>
+      <a href="française.html" class="move-btn"><span>La française</span><img src="Française.png" alt="française"></a>
+      <a href="scandinave.html" class="move-btn"><span>La scandinave</span><img src="Scandinave.png" alt="scandinave"></a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('gambits')">🔽 Gambits</div>
+    <div class="dropdown-content" id="gambits">
+      <a href="#" class="move-btn"><span>Gambit du Roi</span></a>
+      <a href="GambitDame.html" class="move-btn"><span>Gambit Dame</span><img src="GambitDameBLANCS.png" id="img2" alt="img2"></a>
+	   <a href="ItalienneBLANCSGAMBITEVANSSS.html" class="move-btn"><span>Gambit Evans<span><img src="GambitEvansBLANCS.png" id="img45" alt="img45"></a>
+    </div>
+  </div>
+  
+  <a href="trouveTONouverture.html" class="move-btn">Trouve TON ouverture !</a>
+
+  <script>
+    function toggleDropdown(id) {
+      const content = document.getElementById(id);
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+
+    const input = document.getElementById('searchInput');
+    input.addEventListener('input', () => {
+      const filter = input.value.toLowerCase();
+      const allDropdowns = document.querySelectorAll('.dropdown');
+
+      allDropdowns.forEach(dropdown => {
+        const content = dropdown.querySelector('.dropdown-content');
+        const buttons = content.querySelectorAll('.move-btn');
+        let matchFound = false;
+
+        buttons.forEach(btn => {
+          const text = btn.innerText.toLowerCase();
+          if (text.includes(filter)) {
+            btn.style.display = 'flex';
+            matchFound = true;
+          } else {
+            btn.style.display = 'none';
+          }
+        });
+
+        content.style.display = matchFound ? 'block' : 'none';
+      });
+    });
+	document.getElementById("searchInput").addEventListener("input", function() {
+    let filter = this.value.toLowerCase();
+    let buttons = document.querySelectorAll(".button-container a");
+    let dropdowns = document.querySelectorAll(".dropdown-content");
+
+    if (filter === "") {
+        dropdowns.forEach(function(dropdown) {
+            dropdown.style.display = "none";
+        });
+    }
+
+
+    buttons.forEach(function(button) {
+        let buttonText = button.textContent || button.innerText;
+        if (buttonText.toLowerCase().indexOf(filter) > -1) {
+            button.style.display = "";
+        } else {
+            button.style.display = "none";
+        }
+    });
+});
+
+  </script>
+</body>
+</html>

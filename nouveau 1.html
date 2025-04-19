@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Choisir le côté</title>
+  <style>
+  @media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .side-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .btn, .btnB {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .image-defou {
+    width: 60px;
+  }
+
+  .imga {
+    top: 10px;
+    left: 10px;
+    width: 120px !important;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+
+  .side-container h2 {
+    font-size: 20px;
+  }
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f1ec;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+	  font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+	    .containera {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    .side-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .side-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .side-container h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .btn {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      width: 200px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+      margin: 10px 0;
+	  font-size: 25px;
+	  font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #f2f1ec;
+      color: #2C2C2C;
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+	    .btnB {
+      background-color: #f2f1ec;
+      color: #2C2C2C;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      width: 200px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+      margin: 10px 0;
+	  font-size: 25px;
+	  font-weight: bold;
+    }
+
+    .btnB:hover {
+      background-color: #2C2C2C;
+      color: white;
+    }
+
+    .btnB:active {
+      transform: scale(0.95);
+    }
+	.image-defou {
+width: 100px;
+vertical-align: middle;
+}
+	.imga{
+width: 100px;
+  position: absolute; /* ou fixed */
+  top: 30px;
+  left: 30px;
+}
+
+  </style>
+</head>
+<body>
+  <img src="Logopresquefinal.png" class="imga" style="width: 170px;" />
+<div class="containera">
+  <h1>Choisissez votre côté pour la défense sicilienne</h1>
+  </div>
+  
+  <div class="container">
+    <div class="side-container">
+      <h2>Côté Noirs</h2>
+      <button class="btn" onclick="window.location.href='noirs.html'">
+        Variantes
+   <img src="founoir.png" class="image-defou"></img>   </button>
+
+    </div>
+
+    <div class="side-container">
+      <h2>Côté Blancs</h2>
+      <button class="btnB" onclick="window.location.href='blancs.html'">
+        Variantes
+		   <img src="foublanc.png" class="image-defou"></img>   </button>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Variante Najdorf – Défense Sicilienne</title>
+  <style>
+  @media screen and (max-width: 600px) {
+  .move-btn {
+    flex-direction: column;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .move-btn img {
+    width: 80px;
+    height: 80px;
+    margin: 10px 0 0 0;
+  }
+
+  .container {
+    padding: 20px 15px;
+  }
+
+  .moves {
+    font-size: 16px;
+  }
+
+  p, li {
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    font-size: 22px;
+  }
+}
+
+  @font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e7e5df;
+      margin: 0;
+      padding: 20px;
+	  overflow-x: hidden;
+
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .moves {
+      background-color: #eaeaea;
+      border-left: 5px solid #2C2C2C;
+      padding: 15px;
+      font-size: 18px;
+      margin: 20px 0;
+      font-family: "Courier New", monospace;
+    }
+
+    .back-btn {
+	justify-content: center;
+	font-family: 'Poppins', Sans-serif;
+      display: flex;
+      margin: 30px auto 0 auto;
+      background-color: #2C2C2C;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+	  font-size: 18px;
+	  text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #e7e5df;
+      transform: scale(1.05);
+	  color: #2C2C2C;
+    }
+.image-defou {
+width: 60px;
+height: 60px;
+vertical-align: middle;
+margin-right: 30px;
+}
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+align-items: center;
+text-align: center;
+display: flex;
+justify-content: center;
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+}
+.textePoppins {
+font-family: 'Poppins', sans-serif !important;
+}
+    .move-btn {
+      background-color: #2C2C2C;
+      color: white;
+      padding: 10px 20px;
+      margin: 20px 0;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+	   box-sizing: border-box;
+    }
+
+    .move-btn:hover {
+      background-color: #f2f1ec;
+      transform: scale(1.02);
+      color: #2C2C2C;
+    }
+
+    .move-btn img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10%;
+      margin-left: 20px;
+    }
+	    .move-btn span {
+      font-size: 45px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <img src="Logopresquefinal.png" style="width: 170px; position: absolute;" />
+<div class="container" style="background-color: #f2f1ec;">
+<h1>Fiche d'apprentissage de base | Najdorf</h1>
+</div>
+  <br><div class="container" style="background-color: #f2f1ec;"><br>
+    <h1>Variante Najdorf</h1>
+    <h2>Défense Sicilienne</h2>
+
+    <p>
+      La variante Najdorf est l'une des lignes les plus populaires et respectées de la défense sicilienne.
+      Utilisée par des légendes comme Bobby Fischer et Garry Kasparov, elle est connue pour sa flexibilité,
+      sa profondeur stratégique et ses possibilités d'attaque aussi bien pour les Noirs que pour les Blancs.
+    </p>
+
+    <div class="moves">
+      1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6
+    </div>
+
+    <p>
+      Le coup <strong>5...a6</strong> est la marque de fabrique de la Najdorf. Il empêche Nb5 (saut du cavalier en b5)
+      et prépare un développement flexible de l'aile-dame, notamment avec ...e5 ou ...e6.
+    </p>
+
+    <p>
+      Il existe plusieurs réponses populaires des Blancs après 5...a6, comme :
+    </p>
+    <ul>
+      <li><strong>6.Bg5</strong> – Variante de la position anglaise (très tranchante)</li>
+      <li><strong>6.Be2</strong> – Variante classique</li>
+      <li><strong>6.f4</strong> – Variante de l’attaque Fischer-Sozin</li>
+      <li><strong>6.Bc4</strong> – Variante à l’italienne</li>
+      <li><strong>6.h3</strong> ou <strong>6.a4</strong> – lignes secondaires</li>
+    </ul>
+
+    <p>
+      La Najdorf donne aux Noirs de nombreuses options de contre-jeu et demande une bonne connaissance
+      des plans à long terme. Elle est idéale pour les joueurs qui aiment les parties dynamiques.
+    </p>
+
+</div>
+  <br><div class="container" style="background-color: #f2f1ec;"><br>
+<a class="move-btn" href="sicilienneNOIRS.html">⬅ ‎ ‎ ‎ ‎ <span>📚</span> ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎‎ ‎  ‎‎ ‎ ‎ ‎ ‎ ‎ ‎  Revenir au choix de la variante</a>
+  <a href="ChessGo.html" class="move-btn">⬅<img src= "bouton-accueil.png" class="image-defou"/>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ Revenir à l'accueil</a>
+  <a class="move-btn" href="NajdorfNOIRSproblemetheo.html">⬅<img src= "iconeprobtheo.png" class="image-defou"/> Résoudre des problèmes théoriques</a>
+  </div>
+</body>
+</html>

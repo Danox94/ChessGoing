@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrainement théorique | sicilienne | Najdorf</title>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+    <link rel="stylesheet" href="chessboard/css/chessboard-1.0.0.min.css">
+    
+
+    <script src="chessboard/js/chessboard-1.0.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+</head>
+
+  <style>
+    @font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e7e5df;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #board {
+      width: 400px;
+      margin: 20px auto;
+    }
+    #message {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+    .back-btn {
+	font-family: Poppins, Sans-serif;
+      display: block;
+      margin: 30px auto 0 auto;
+      background-color: #2C2C2C;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+	  font-size: 18px;
+	  text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background-color: #e7e5df;
+      transform: scale(1.05);
+	  color: #2C2C2C;
+    }
+	p {
+	font-family: 'Poppins',  sans-serif;
+	}
+  </style>
+</head>
+<body>
+  <h1>♞ Problème | Najdorf</h1>
+  <p>Pour avoir la réponse, consulte la fiche sur la Najdorf !</p>
+  <div id="board"></div>
+  <div id="message">Faites le bon coup pour résoudre ce problème !</div>
+  <button class="back-btn" onclick="resetBoard()">Réinitialiser</button>
+  <BR><a href="NajdorfNOIRSfiche.html" class="back-btn">Voir la fiche sur la variante Najdorf</a><BR>
+  <script>
+    $(document).ready(function() {
+      // Initialise le jeu et l'échiquier
+      const game = new Chess('rnbqkb1r/pp2pppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5');
+
+      const board = Chessboard('board', {
+        position: game.fen(),
+        draggable: true,
+        pieceTheme: 'chessboard/img/chesspieces/wikipedia/{piece}.png',
+        orientation: 'black', // Affiche l'échiquier du côté des Noirs
+        onDrop: (source, target) => {
+          // On vérifie si le coup est valable pour la couleur actuelle (les Noirs uniquement)
+          const move = game.move({ from: source, to: target, promotion: 'q' });
+          
+          // Si le coup est invalide, on annule le déplacement
+          if (move === null) {
+            return 'snapback';
+          }
+
+          // Vérification que c'est le bon coup (ici, Bxf3)
+          const goodMove = move.san === 'a6';
+          if (goodMove) {
+            document.getElementById('message').textContent = '✔️ Bien joué ! Début de la variante Najdorf !';
+          } else {
+            game.undo();
+            document.getElementById('message').textContent = '❌ Mauvais coup. Réessaye !';
+            return 'snapback';
+          }
+        }
+      });
+
+      // Fonction de réinitialisation de l'échiquier
+      window.resetBoard = function() {
+        game.reset();
+        game.load('rnbqkb1r/pp2pppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5');
+        board.position(game.fen());
+        document.getElementById('message').textContent = 'Faites le bon coup pour résoudre ce problème !';
+      };
+    });
+  </script>
+</body>
+</html>
